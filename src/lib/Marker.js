@@ -202,7 +202,7 @@ export default _.flowRight(
 
   getInitialState() {
     // https://developers.google.com/maps/documentation/javascript/3.exp/reference#Marker
-    const marker = new MarkerWithLabel(
+    const marker = new google.maps.Marker(
       collectUncontrolledAndControlledProps(
         defaultUncontrolledPropTypes,
         controlledPropTypes,
