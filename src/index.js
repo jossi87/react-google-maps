@@ -1,14 +1,21 @@
-export { default as GoogleMapLoader } from "./GoogleMapLoader";
+import React from "react";
 
-export { default as GoogleMap } from "./GoogleMap";
-export { default as Circle } from "./Circle";
-export { default as DirectionsRenderer } from "./DirectionsRenderer";
-export { default as DrawingManager } from "./DrawingManager";
-export { default as InfoWindow } from "./InfoWindow";
-export { default as KmlLayer } from "./KmlLayer";
-export { default as Marker } from "./Marker";
-export { default as OverlayView } from "./OverlayView";
-export { default as Polygon } from "./Polygon";
-export { default as Polyline } from "./Polyline";
-export { default as Rectangle } from "./Rectangle";
-export { default as SearchBox } from "./SearchBox";
+import ReactDOM from "react-dom";
+
+const Root = (
+  window.ReactGoogleMapsAsync ?
+  require(`./app/AsyncApp`).default :
+  /*
+   * If you're not using async,
+   *
+   * Add script src="https://maps.googleapis.com/maps/api/js" to your HTML to provide google.maps reference
+   */
+  require(`./app/App`).default
+);
+
+import "./index.css";
+
+ReactDOM.render(
+  <Root />,
+  document.getElementById(`root`)
+);

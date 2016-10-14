@@ -1,3 +1,4 @@
-examples/**
+coverage/**
+docs/**
 lib/**
 public/**
